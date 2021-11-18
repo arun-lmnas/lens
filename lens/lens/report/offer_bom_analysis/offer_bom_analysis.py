@@ -1,7 +1,7 @@
 # Copyright (c) 2013, LMNAs Cloud Solutions and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 
 def execute(filters=None):
 filters = frappe._dict(filters or {})
