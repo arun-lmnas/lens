@@ -53,8 +53,7 @@ def get_columns(filters):
 def get_data(filters):
 
 	data = []
-	quotation = frappe.db.get_value("Quotation", filters.quotation, ['name', 'll_ebitda', 'll_ebitda_percent'],
-		)
+	quotation = frappe.db.get_value("Quotation", filters.quotation, ['name', 'll_ebitda', 'll_ebitda_percent'], as_dict=1)
 
 	row = {"quotation": quotation.name, "ll_ebitda": quotation.ll_ebitda, "ll_ebitda_percent": quotation.ll_ebitda_percent}
 
