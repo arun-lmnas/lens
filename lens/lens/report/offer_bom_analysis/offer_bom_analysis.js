@@ -5,7 +5,7 @@
 frappe.query_reports["Offer BOM Analysis"] = {
 	"filters": [
 		{
-			"fieldname":"offer",
+			"fieldname":"quotation",
 			"label": __("Offer"),
 			"fieldtype": "Link",
 			"options": "Quotation",
