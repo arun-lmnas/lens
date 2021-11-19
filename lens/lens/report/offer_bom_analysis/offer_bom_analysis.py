@@ -4,7 +4,7 @@
 import frappe
 
 def execute(filters=None):
-filters = frappe._dict(filters or {})
+	if not filters: filters = frappe._dict()
 	columns = get_columns(filters)
 	data = get_data(filters)
 	return columns, data
