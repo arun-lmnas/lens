@@ -4,9 +4,9 @@
 
 frappe.query_reports["Offer Calculation Beta"] = {
 	"filters": [
-	{
-      		fieldname: "someField",
-      		label: "Some Field",
+    	{
+      		fieldname: "xAxisField",
+      		label: "Range Selection Filter",
       		fieldtype: "Select",
       		options: "30\n45\n60",
       		default: 30
