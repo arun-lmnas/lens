@@ -2,10 +2,8 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe import _, scrub
 
 def execute(filters=None):
-	if not filters: filters = frappe._dict()
 	columns = get_columns(filters)
 	data = get_data(filters)
 	return columns, data
