@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "heading": true,
+      "title": "Next Docs Documentation",
+      "routes": [
+        {
+          "title": "Introduction",
+          "path": "/docs/README.md"
+        }
+      ]
+    }
+  ]
+}
