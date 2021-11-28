@@ -9,12 +9,16 @@
           "path": "/docs/README.md"
         },
         {
-          "title": "Basic Features",
+          "title": "Products",
           "open": true,
           "routes": [
             {
-              "title": "Pages",
-              "path": "/docs/basic-features/pages.md"
+              "title": "LUMP",
+              "path": "/docs/products/lump.md"
+            },
+            {
+              "title": "LENScribe",
+              "path": "/docs/products/lenscribe.md"
             },
           ]
         },
