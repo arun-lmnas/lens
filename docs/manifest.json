@@ -4,10 +4,7 @@
       "heading": true,
       "title": "LENS Documentation",
       "routes": [
-        {
-          "title": "Introduction",
-          "path": "/docs/README.md"
-        },
+        { "title": "Introduction", "path": "/docs/README.md"},
         {
           "title": "Products",
           "open": true,
@@ -19,10 +16,10 @@
             {
               "title": "LENScribe",
               "path": "/docs/products/lenscribe.md"
-            },
+            }
           ]
-        },
-      ],
-    },
-  ],
+        }
+      ]
+    }
+  ]
 }
