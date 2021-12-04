@@ -1,5 +1,4 @@
-import { promises as fs } from 'fs'
-import path from 'path'
+import { getManifest } from "../../lib/api"
 
 export default function Docs({doc}) {
   console.log(doc)
@@ -19,6 +18,8 @@ export async function getStaticProps({params}) {
   }
 }
 export async function getStaticPaths() {
+  const manifest = getManifest()
+  console.log('Manifest from getStaticPaths', manifest)
   return {
     paths: [
       { params: { slug: '1' } },
