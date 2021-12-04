@@ -22,8 +22,8 @@ export async function getStaticPaths() {
   console.log('Manifest from getStaticPaths', manifest)
   return {
     paths: [
-      { params: { slug: '1' } },
-      { params: { slug: '2' } }
+      { params: { slug: 'readme.md' } },
+      { params: { slug: 'products/lenscribe.md' } }
     ],
     fallback: false
   }
