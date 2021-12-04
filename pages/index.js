@@ -1,6 +1,5 @@
 import { ContentProvider } from 'destack'
 import 'grapesjs/dist/css/grapes.min.css'
-import Layout from 'components/layout'
 
 export { getStaticProps } from 'destack/build/server'
 

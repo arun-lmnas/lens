@@ -1,4 +1,4 @@
-import ProductIntro from 'components/productIntro'
+import ProductIntro from '../../../components/productIntro'
 const productDetails = {
     intro:{
         title: 'LMNAs ExperieNce Subscription',
