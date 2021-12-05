@@ -39,7 +39,7 @@ export default function Sidebar({ routes }) {
             <nav className="flex-1 px-2 space-y-1 mt-6">
               {routes &&
                 Object.keys(routes).map((route, idx) => {
-                  const obj = routes[route][0]
+                  const obj = routes[route]
                   return (
                     <div key={`sidebar-${idx}`}>
                       <h3 className="text-gray-800 uppercase font-bold">
