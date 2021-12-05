@@ -19,9 +19,20 @@ export async function getStaticProps({params}) {
 }
 export async function getStaticPaths() {
   const allDocPaths = getAllDocPaths()
+
+  return{ paths: allDocPaths.map((docPath) => {
+    return {
+      params: {
+        slug: splitPaths(docPath) ,
+      },
+    }
+  }),
+  fallback: false,
+}
+}
+/*
   const path1 = '/docs/README.md'
   const path2 = '/docs/products/lenscribe.md'
- 
   return {
     paths: [
       { params: { slug: splitPaths(path1) } },
@@ -29,13 +40,12 @@ export async function getStaticPaths() {
     ],
     fallback: false
   }
-}
+} */
 export function splitPaths ( path) {
   const parts =  path.split('/')
 
   let part1 = parts.shift()
   part1 = parts.shift()
-  console.log('Parts from s[litPaths', parts)
   return parts
 }
 
