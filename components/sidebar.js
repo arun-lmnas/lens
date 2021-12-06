@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import styles from './sidebar.module.css'
 
 function ListItems({ routes }) {
   if (routes) {
@@ -32,29 +33,22 @@ function ListItems({ routes }) {
 
 export default function Sidebar({ routes }) {
   return (
-    <div className="w-64">
-      <div className="flex flex-col flex-grow bg-gray-50 overflow-y-auto rounded-lg mt-4">
-        <div className="flex items-center flex-shrink-0 px-2 pb-8">
-          <div className="flex-grow flex flex-col">
-            <nav className="flex-1 px-2 space-y-1 mt-6">
-              {routes &&
-                Object.keys(routes).map((route, idx) => {
-                  const obj = routes[route]
-                  return (
-                    <div key={`sidebar-${idx}`}>
-                      <h3 className="text-gray-800 uppercase font-bold">
-                        {obj.title}
-                      </h3>
-                      <ul>
-                        <ListItems routes={obj.routes} />
-                      </ul>
-                    </div>
-                  )
-                })}
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
+    <nav className={styles.nav}>
+      <input className={styles.input} placeholder="Search..." />
+      {routes &&
+        Object.keys(routes).map((route, idx) => {
+          const obj = routes[route]
+          return (
+            <div key={`sidebar-${idx}`}>
+              <h3 className="text-gray-800 uppercase font-bold">
+                {obj.title}
+              </h3>
+              <ul>
+                <ListItems routes={obj.routes} />
+              </ul>
+            </div>
+          )
+        })}
+    </nav>
   )
 }
