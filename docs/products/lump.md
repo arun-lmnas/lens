@@ -1,3 +1,16 @@
 ## LMNAs Unified Marketing Platform
-A Opensource platform built primarily on react
+
+An Opensource platform built primarily on react An Opensource platform built primarily on react
+
 ### Repository
+
+```
+Docs.getLayout = function getLayout(page) {
+  return (
+    <LayoutDocs>
+      <Sidebar routes={page.props.doc.routes} />
+      {page}
+    </LayoutDocs>
+  );
+};
+```
