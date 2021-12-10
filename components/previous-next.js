@@ -16,7 +16,7 @@ export default function PreviousNext({ prevNext }) {
                         </a>
                     </Link>}
                     {prevNext.next != '' && <Link href={prevNext.next.path}>
-                        <a class="inline-flex ml-auto md:mb-2 lg:mb-0 text-indigo-500 ">{prevNext.next.title}
+                        <a className="inline-flex ml-auto md:mb-2 lg:mb-0 text-indigo-500 ">{prevNext.next.title}
                             <svg width="24" height="24" viewBox="0 0 24 24">
                                 <g fill="currentColor">
                                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
