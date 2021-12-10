@@ -1,19 +1,15 @@
 import LayoutDocs from '../../components/layoutDocs'
-import Sidebar from '../../components/sidebar'
 import DocBody from '../../components/doc-body'
 import { getAllDocPaths, getDocBySlug, getManifest, getNextPrev } from "../../lib/api"
 import markdownToHtml from '../../lib/markdownToHtml'
 import PreviousNext from '../../components/previous-next'
 
 export default function Docs({ data }) {
-  console.log(data.doc.content)
   return (
     <section>
       <div>
         <DocBody content={data.content} />
-
         <PreviousNext prevNext={data.nextPrev} />
-
       </div>
     </section>
   )
@@ -27,7 +23,6 @@ export async function getStaticProps({ params }) {
   const nextPrev = getNextPrev(params.slug)
   //Refer LUMP or LUMP BETA. This is copied from there
   const content = await markdownToHtml(doc.content || '')
-  console.log('content from staticProps', content)
   const manifest = getManifest()
   //Routes are sent to the sidebar component to build the navigation
   const routes = { title: manifest.routes[0] }
@@ -41,6 +36,7 @@ export async function getStaticProps({ params }) {
   }
 }
 export async function getStaticPaths() {
+  //Return all path from the manifest.json in a simplifeid array
   const allDocPaths = getAllDocPaths()
 
   return {
@@ -59,17 +55,18 @@ export async function getStaticPaths() {
 }
 
 export function splitPaths(path) {
+  //Split the route in parts so that they can be sent as array to slug
   const parts = path.split('/')
-
+  //the array is shifted twice to get /products/lenscribe from /docs/products/lenscibe
   let part1 = parts.shift()
   part1 = parts.shift()
   return parts
 }
-
+//Function to wrap the Layout component for this page
 Docs.getLayout = function getLayout(page) {
   return (
-    <LayoutDocs>
-      <Sidebar routes={page.props.data.routes} />
+    //Passing routes to LayoutDocs as this is required for sidebar component
+    <LayoutDocs routes={page.props.data.routes} >
       {page}
     </LayoutDocs>
   );

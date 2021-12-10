@@ -2,7 +2,6 @@
 import Head from 'next/head'
 import { getManifest } from "../../lib/api"
 import LayoutDocs from '../../components/layoutDocs'
-import Sidebar from '../../components/sidebar'
 
 export default function Index({ routes }) {
 
@@ -13,16 +12,14 @@ export default function Index({ routes }) {
                 <meta name="description" />
             </Head>
             <h1> {routes.title.title} </h1>
-
-
         </>
     )
 }
 
 Index.getLayout = function getLayout(page) {
     return (
-      <LayoutDocs>
-        <Sidebar routes= {page.props.routes} />
+      <LayoutDocs routes= {page.props.routes} >
+        
         {page}
       </LayoutDocs> 
     );
